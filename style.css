@@ -1,0 +1,511 @@
+/* Style général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    
+    background-color: #000000; /* Arrière-plan noir */
+    color: #ffffff; /* Texte en blanc */
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header / Navbar */
+header {
+    background-color: #000000; /* Fond noir */
+    color: #ffffff; /* Texte blanc */
+    padding: 20px 0;
+    box-shadow: 0px 4px 2px -2px rgba(0, 0, 0, 0.2);
+}
+/* Styles pour la page active */
+nav ul li a.active {
+    color: #8e44ad; /* Violet pour la page active */
+    font-weight: bold; /* Mettez en valeur la page active */
+    border-bottom: 2px solid #8e44ad; /* Souligner la page active */
+}
+section#home {
+    position: relative;
+    background-image: url('image.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* L'image couvre toute la section */
+    background-position: center; /* Centrer l'image */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    height: 100vh; /* Prend 100% de la hauteur de l'écran */
+    color: #ffffff; /* Texte en blanc */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+}
+section#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Couche noire avec 30% d'opacité */
+    z-index: -1; /* Place l'overlay derrière le texte */
+}
+section#home h1 p{
+z-index: 1;
+}
+
+section#home h1{
+    size: 400px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff; /* Texte de navigation blanc */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #8e44ad; /* Violet sur hover */
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+
+/* Messages d'erreur et de succès */
+.error-message {
+    color: #e74c3c; /* Rouge pour les erreurs */
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 15px;
+    border-left: 5px solid #e74c3c;
+    margin: 20px 0;
+    text-align: left;
+}
+
+.success-message {
+    color: #27ae60; /* Vert pour les succès */
+    background-color: rgba(0, 255, 0, 0.1);
+    padding: 15px;
+    border-left: 5px solid #27ae60;
+    margin: 20px 0;
+    text-align: left;
+}
+
+/* Footer */
+/* Style général du footer */
+footer {
+    background-color: #000000; /* Fond noir */
+    padding: 20px 0;
+    text-align: center;
+    color: #ffffff; /* Texte en blanc */
+    font-size: 14px;
+}
+
+footer a.phone-number {
+    color: #8e44ad; /* Couleur violette pour le lien du numéro */
+    text-decoration: none;
+}
+
+footer a.phone-number:hover {
+    text-decoration: underline;
+}
+
+/* Conteneur des icônes de réseaux sociaux */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.1); /* Agrandir légèrement au survol */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .social-icons a {
+        margin: 0 5px; /* Réduit l'espacement sur mobile */
+    }
+}
+
+
+/* Responsivité */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* service */
+/* Style général de la section Services */
+#services {
+    padding: 60px 20px;
+    background-color: #000000; /* Fond noir */
+    color: #ffffff; /* Texte en blanc */
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #8e44ad; /* Titre en violet */
+}
+
+/* Conteneur des cartes de service */
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Style des cartes en glassmorphism */
+.service-card {
+    background: rgba(255, 255, 255, 0.1); /* Transparence vitrée */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Effet flou pour le glassmorphism */
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #ffffff; /* Texte en blanc */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des titres et paragraphes des cartes */
+.service-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #8e44ad; /* Titre en violet */
+}
+
+.service-card p {
+    font-size: 16px;
+    color: #ffffff; /* Texte en blanc */
+    opacity: 0.8;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%; /* S'adapte à la largeur de l'écran */
+    }
+}
+
+/* End service */
+
+/* Style pour mettre en avant le texte dans le H1 */
+.highlighted {
+    color: #cb70f3; /* Par exemple, une couleur violette */
+}
+
+
+
+
+
+/* cta button */
+.cta {
+  all: unset;
+  width: 150px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  text-align: center;
+  z-index: 1;
+  padding: 12px 25px;
+  display: inline-block;;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cta::after,
+.cta::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.cta::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #8e44ad;
+  border-radius: 10px;
+}
+
+.cta::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.cta:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.cta:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.cta:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    width: calc(25% - 20px);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+  }
+  
+  .testimonial-card img.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .testimonial-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial-card .testimonial-message {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  
+  /* Effet de blur sur le texte pour améliorer la lisibilité */
+  .testimonial-card .testimonial-message {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .testimonial-card {
+      width: calc(50% - 20px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial-card {
+      width: 100%;
+    }
+  }
+
+
+/* Section Contact avec deux parties */
+#contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background-color: #0000; /* Transparent comme demandé */
+}
+
+.contact-container {
+    display: flex;
+    width: 100%;
+    height: 500px; /* Taille égale pour les deux div */
+}
+
+.contact-form-container, .contact-image-container {
+    flex: 1;
+    position: relative;
+}
+
+.contact-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    padding: 20px;
+}
+
+.contact-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Couleur solide avec opacité de 30% */
+    z-index: 1;
+}
+
+.contact-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1); /* Transparence vitrée */
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-form-container h2 {
+    font-size: 36px;
+    margin: 10px;
+    color: #ffffff;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.contact-form .form-group input, .contact-form .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    outline: none;
+}
+
+.contact-form .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.submit-btn {
+    background-color: #8e44ad;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #732d91;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    #contact-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .contact-form-container, .contact-image-container {
+        width: 100%;
+    }
+}
